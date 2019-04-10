@@ -9,7 +9,7 @@ public class Lobby : MonoBehaviourPun
     // Instantiate the object that shows the players in the lobby
     [SerializeField] GameObject playerLobbyObject;
 
-    int playerReady;
+    int playersReady;
 
     [SerializeField] GameObject playersReadyText;
 
@@ -24,7 +24,14 @@ public class Lobby : MonoBehaviourPun
     // Update is called once per frame
     void Update()
     {
-        playersReadyText.GetComponent<Text>().text = playerReady.ToString();
+        playersReadyText.GetComponent<Text>().text = playersReady.ToString();
+        if (playersReady == PhotonNetwork.CountOfPlayers)
+        {
+            if(PhotonNetwork.IsMasterClient)
+            {
+                PhotonNetwork.LoadLevel("Tetris");
+            }
+        }
     }
 
 
@@ -45,7 +52,7 @@ public class Lobby : MonoBehaviourPun
     [PunRPC]
     void checkReadiedPlayers(int increment, PhotonMessageInfo info)
     {
-        playerReady += increment;
+        playersReady += increment;
         if(increment > 0)
         {
             GameObject senderGameObject = (GameObject)info.Sender.TagObject;
