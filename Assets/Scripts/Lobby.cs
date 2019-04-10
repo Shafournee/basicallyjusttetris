@@ -15,13 +15,10 @@ public class Lobby : MonoBehaviourPun
 
     bool haveReadiedUp;
 
-    GameObject heldPlayerObject;
-
     // Start is called before the first frame update
     void Start()
     {
-        heldPlayerObject =  PhotonNetwork.Instantiate(playerLobbyObject.name, Vector3.zero, Quaternion.identity);
-        Debug.Log("This is my instantiated Object " + heldPlayerObject);
+        PhotonNetwork.Instantiate(playerLobbyObject.name, Vector3.zero, Quaternion.identity);
     }
 
     // Update is called once per frame
@@ -46,16 +43,18 @@ public class Lobby : MonoBehaviourPun
     }
 
     [PunRPC]
-    void checkReadiedPlayers(int increment)
+    void checkReadiedPlayers(int increment, PhotonMessageInfo info)
     {
         playerReady += increment;
         if(increment > 0)
         {
-            heldPlayerObject.transform.GetChild(1).gameObject.GetComponent<Text>().text = "y";
+            GameObject senderGameObject = (GameObject)info.Sender.TagObject;
+            senderGameObject.transform.GetChild(1).gameObject.GetComponent<Text>().text = "y";
         }
         else
         {
-            heldPlayerObject.transform.GetChild(1).gameObject.GetComponent<Text>().text = "n";
+            GameObject senderGameObject = (GameObject)info.Sender.TagObject;
+            senderGameObject.transform.GetChild(1).gameObject.GetComponent<Text>().text = "n";
         }
     }
 }
