@@ -25,7 +25,7 @@ public class Lobby : MonoBehaviourPun
     void Update()
     {
         playersReadyText.GetComponent<Text>().text = playersReady.ToString();
-        if (playersReady == PhotonNetwork.CountOfPlayers)
+        if (playersReady == PhotonNetwork.CurrentRoom.PlayerCount)
         {
             if(PhotonNetwork.IsMasterClient)
             {
