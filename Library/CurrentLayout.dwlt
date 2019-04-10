@@ -21,7 +21,7 @@ MonoBehaviour:
   m_ShowMode: 4
   m_Title: 
   m_RootView: {fileID: 2}
-  m_MinSize: {x: 950, y: 548}
+  m_MinSize: {x: 950, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &2
 MonoBehaviour:
@@ -111,8 +111,8 @@ MonoBehaviour:
     y: 30
     width: 1920
     height: 988
-  m_MinSize: {x: 679, y: 498}
-  m_MaxSize: {x: 14002, y: 14048}
+  m_MinSize: {x: 683, y: 498}
+  m_MaxSize: {x: 14004, y: 14048}
   vertical: 0
   controlID: 103
 --- !u!114 &6
@@ -136,7 +136,7 @@ MonoBehaviour:
     y: 0
     width: 1474
     height: 988
-  m_MinSize: {x: 404, y: 498}
+  m_MinSize: {x: 406, y: 498}
   m_MaxSize: {x: 10002, y: 14048}
   vertical: 1
   controlID: 71
@@ -161,8 +161,8 @@ MonoBehaviour:
     y: 0
     width: 1474
     height: 595
-  m_MinSize: {x: 404, y: 224}
-  m_MaxSize: {x: 8004, y: 4024}
+  m_MinSize: {x: 406, y: 224}
+  m_MaxSize: {x: 8006, y: 4024}
   vertical: 0
   controlID: 31
 --- !u!114 &8
@@ -184,8 +184,8 @@ MonoBehaviour:
     y: 0
     width: 285
     height: 595
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 202, y: 224}
+  m_MaxSize: {x: 4002, y: 4024}
   m_ActualView: {fileID: 14}
   m_Panes:
   - {fileID: 14}
@@ -210,8 +210,8 @@ MonoBehaviour:
     y: 0
     width: 1189
     height: 595
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 204, y: 224}
+  m_MaxSize: {x: 4004, y: 4024}
   m_ActualView: {fileID: 15}
   m_Panes:
   - {fileID: 15}
@@ -265,8 +265,8 @@ MonoBehaviour:
     y: 0
     width: 446
     height: 988
-  m_MinSize: {x: 275, y: 50}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 277, y: 74}
+  m_MaxSize: {x: 4002, y: 4024}
   m_ActualView: {fileID: 19}
   m_Panes:
   - {fileID: 19}
@@ -415,9 +415,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: c64f0000
-      m_LastClickedID: 20422
-      m_ExpandedIDs: ecccffff00cdffff48cfffff50cfffff74d0ffff88d0ffffd0d2ffffd8d2ffff02d3ffffa4d3ffff92d4ffff14d5ffff28d5ffff68d7ffff70d7ffff24d8ffff74d8ffffdad8ffffeed8ffff36dbffff3adbffff7adbffff00ddffff16dfffff2adfffff72e1ffff76e1ffff0ee2ffff22e2ffff6ae4ffff6ee4ffffa6e6ffffbae6ffff06e9ffff0ee9ffff04eaffff18eaffff5cecffff60ecffff82edffff96edffffdaefffffdeefffff96f1ffffaaf1ffffeef3fffff2f3ffff46f5ffff5af5ffffa2f7ffffaaf7ffffe2f8fffff6f8ffff42fbffff46fbffffd6fbffffb840000036440000d44a0000d04f0000
+      m_SelectedIDs: 0a0a0000
+      m_LastClickedID: 0
+      m_ExpandedIDs: 18f8ffffc8f8ffffdcf8ffff24fbffff28fbffffacfbffff1436000022360000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -627,14 +627,14 @@ MonoBehaviour:
   m_LastFolders:
   - Assets/Scripts
   m_LastFoldersGridSize: -1
-  m_LastProjectPath: E:\Unity Projects\Basically just regular tetris
+  m_LastProjectPath: E:\Unity Projects\basicallyjusttetris
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: f20f0000
-    m_LastClickedID: 4082
-    m_ExpandedIDs: 000000002e0b0000520c00000811000000ca9a3b
+    m_SelectedIDs: fe0f0000
+    m_LastClickedID: 4094
+    m_ExpandedIDs: 000000003a0b00005e0c00001411000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -662,7 +662,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000002e0b0000520c000008110000
+    m_ExpandedIDs: 000000003a0b00005e0c000014110000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
