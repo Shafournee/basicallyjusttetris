@@ -68,7 +68,7 @@ public class Launcher : MonoBehaviourPunCallbacks
     {
         // Just create a room
         Debug.Log("OnJoinRandomFailed called - Creating Room...");
-        PhotonNetwork.CreateRoom(null, new RoomOptions { MaxPlayers = 2 });
+        PhotonNetwork.CreateRoom(null, new RoomOptions { MaxPlayers = 4 });
     }
 
 
