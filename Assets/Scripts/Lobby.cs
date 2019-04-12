@@ -27,7 +27,8 @@ public class Lobby : MonoBehaviourPun
         playersReadyText.GetComponent<Text>().text = playersReady.ToString();
         if (playersReady == PhotonNetwork.CurrentRoom.PlayerCount)
         {
-            if(PhotonNetwork.IsMasterClient)
+            
+            if (PhotonNetwork.IsMasterClient)
             {
                 PhotonNetwork.LoadLevel("Tetris");
             }
