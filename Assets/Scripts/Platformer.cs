@@ -6,9 +6,6 @@ using Photon.Realtime;
 
 public class Platformer : MonoBehaviourPun
 {
-
-    public static GameObject localPlayerInstance;
-
     enum Direction { left, right, none }
 
     Direction dir;
@@ -18,14 +15,6 @@ public class Platformer : MonoBehaviourPun
     float speed = 5f;
 
     bool isGrounded;
-
-    private void Awake()
-    {
-        if(photonView.IsMine)
-        {
-            Platformer.localPlayerInstance = gameObject;
-        }
-    }
 
     // Start is called before the first frame update
     void Start()

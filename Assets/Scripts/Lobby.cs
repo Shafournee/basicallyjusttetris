@@ -15,6 +15,8 @@ public class Lobby : MonoBehaviourPun
 
     bool haveReadiedUp;
 
+	bool isLoading = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -27,10 +29,10 @@ public class Lobby : MonoBehaviourPun
         playersReadyText.GetComponent<Text>().text = playersReady.ToString();
         if (playersReady == PhotonNetwork.CurrentRoom.PlayerCount)
         {
-            
-            if (PhotonNetwork.IsMasterClient)
+            if (PhotonNetwork.IsMasterClient && !isLoading)
             {
-                PhotonNetwork.LoadLevel("Tetris");
+				isLoading = true;
+				PhotonNetwork.LoadLevel("Tetris");
             }
         }
     }
