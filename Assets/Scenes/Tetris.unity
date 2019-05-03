@@ -149,7 +149,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b8eb561a61d7404bb66936660328587, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 6745559766400954578, guid: f135e2cef3fb72c46b3bec93d94ec6bc, type: 3}
+  platformerPlayer: {fileID: 6745559766400954578, guid: f135e2cef3fb72c46b3bec93d94ec6bc,
+    type: 3}
+  tetrisPlayer: {fileID: 6357384858825906560, guid: 23ac33eed46c8204c9da9eb20119f940,
+    type: 3}
 --- !u!4 &206788463
 Transform:
   m_ObjectHideFlags: 0

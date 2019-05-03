@@ -10,11 +10,13 @@ GameObject:
   m_Component:
   - component: {fileID: 6745559766400954576}
   - component: {fileID: 6745559766400954577}
-  - component: {fileID: 6745559766400954572}
-  - component: {fileID: 3460426140651696877}
+  - component: {fileID: 2441744684501491744}
+  - component: {fileID: 2447087412964242142}
+  - component: {fileID: 388886389120882188}
   - component: {fileID: 6745559766400954574}
   - component: {fileID: 6745559766400954575}
   - component: {fileID: 6745559766400954571}
+  - component: {fileID: 2436847388907532532}
   m_Layer: 0
   m_Name: Platformer
   m_TagString: Untagged
@@ -84,7 +86,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &6745559766400954572
+--- !u!114 &2441744684501491744
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -102,11 +104,29 @@ MonoBehaviour:
   Synchronization: 3
   OwnershipTransfer: 0
   ObservedComponents:
-  - {fileID: 3460426140651696877}
+  - {fileID: 2447087412964242142}
   viewIdField: 0
-  InstantiationId: 1
+  InstantiationId: 0
   isRuntimeInstantiated: 0
---- !u!114 &3460426140651696877
+--- !u!114 &2447087412964242142
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6745559766400954578}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c99ea83339647a4c912346e044a5662, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  realPosition: {x: 0, y: 0, z: 0}
+  positionAtLastPacket: {x: 0, y: 0, z: 0}
+  currentTime: 0
+  currentPacketTime: 0
+  lastPacketTime: 0
+  timeToReachGoal: 0
+--- !u!114 &388886389120882188
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -124,8 +144,8 @@ MonoBehaviour:
     TeleportIfDistanceGreaterThan: 3
     InterpolateOption: 4
     InterpolateMoveTowardsSpeed: 1
-    InterpolateLerpSpeed: 3
-    ExtrapolateOption: 2
+    InterpolateLerpSpeed: 30
+    ExtrapolateOption: 0
     ExtrapolateSpeed: 1
     ExtrapolateIncludingRoundTripTime: 1
     ExtrapolateNumberOfStoredPositions: 1
@@ -198,3 +218,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b38a24ad8c99ba04f88f30792549283d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2436847388907532532
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6745559766400954578}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SynchronizePosition: 1
+  m_SynchronizeRotation: 1
+  m_SynchronizeScale: 0
