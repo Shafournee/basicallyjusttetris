@@ -15,6 +15,7 @@ public class Platformer : MonoBehaviourPun
     float speed = 5f;
 
     bool isGrounded;
+    bool recentlyJumped;
 
     // Start is called before the first frame update
     void Start()
@@ -43,7 +44,10 @@ public class Platformer : MonoBehaviourPun
 
         if (Physics2D.Raycast(new Vector2(transform.position.x, GetComponent<BoxCollider2D>().bounds.min.y - .01f), Vector2.down, .1f))
         {
-            isGrounded = true;
+            if(!recentlyJumped)
+            {
+                isGrounded = true;
+            }
         }
         else
         {
@@ -64,6 +68,10 @@ public class Platformer : MonoBehaviourPun
         {
             rigidBody.velocity = new Vector2(-speed, rigidBody.velocity.y);
         }
+        else if(isGrounded)
+        {
+            rigidBody.velocity = new Vector2(0f, 0f);
+        }
         else
         {
             rigidBody.velocity = new Vector2(0f, rigidBody.velocity.y);
@@ -71,7 +79,15 @@ public class Platformer : MonoBehaviourPun
 
         if(Input.GetKey(KeyCode.Space) && isGrounded)
         {
-            rigidBody.AddForce(new Vector2(0f, 300f));
+            StartCoroutine(JumpingCoroutine());
         }
+    }
+
+    IEnumerator JumpingCoroutine()
+    {
+        recentlyJumped = true;
+        rigidBody.AddForce(new Vector2(0f, 300f));
+        yield return new WaitForSeconds(.8f);
+        recentlyJumped = false;
     }
 }
