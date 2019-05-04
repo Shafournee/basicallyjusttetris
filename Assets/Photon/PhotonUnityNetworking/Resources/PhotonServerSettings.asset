@@ -34,5 +34,9 @@ MonoBehaviour:
   - RespawnSpaceship
   - checkReadiedPlayers
   - getReadiedPlayers
+  - TetrisPlayerWasInstantiated
+  - PlayerHasJoined
+  - InstantiatePlatformingPlayers
+  - InstantiateTetrisPlayer
   DisableAutoOpenWizard: 1
   ShowSettings: 1

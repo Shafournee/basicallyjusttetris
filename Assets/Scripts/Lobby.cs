@@ -42,7 +42,7 @@ public class Lobby : MonoBehaviourPun
     {
         haveReadiedUp = !haveReadiedUp;
 
-        if (haveReadiedUp == true)
+        if (haveReadiedUp)
         {
             photonView.RPC("checkReadiedPlayers", RpcTarget.AllBuffered, 1);
         }
