@@ -13,6 +13,8 @@ public class Lobby : MonoBehaviourPun
 
     [SerializeField] GameObject playersReadyText;
 
+    [SerializeField] GameObject startButton;
+
     bool haveReadiedUp;
 
 	bool isLoading = false;
@@ -26,14 +28,13 @@ public class Lobby : MonoBehaviourPun
     // Update is called once per frame
     void Update()
     {
-        playersReadyText.GetComponent<Text>().text = playersReady.ToString();
-        if (playersReady == PhotonNetwork.CurrentRoom.PlayerCount)
+        if(playersReady == PhotonNetwork.PlayerList.Length)
         {
-            if (PhotonNetwork.IsMasterClient && !isLoading)
-            {
-				isLoading = true;
-				PhotonNetwork.LoadLevel("Tetris");
-            }
+            startButton.GetComponent<Button>().interactable = true;
+        }
+        else
+        {
+            startButton.GetComponent<Button>().interactable = false;
         }
     }
 
@@ -52,6 +53,18 @@ public class Lobby : MonoBehaviourPun
         }
     }
 
+    public void StartGame()
+    {
+        if (playersReady == PhotonNetwork.PlayerList.Length)
+        {
+            if (PhotonNetwork.IsMasterClient && !isLoading)
+            {
+                isLoading = true;
+                PhotonNetwork.LoadLevel("Tetris");
+            }
+        }
+    }
+
     [PunRPC]
     void checkReadiedPlayers(int increment, PhotonMessageInfo info)
     {
@@ -66,5 +79,7 @@ public class Lobby : MonoBehaviourPun
             GameObject senderGameObject = (GameObject)info.Sender.TagObject;
             senderGameObject.transform.GetChild(1).gameObject.GetComponent<Text>().text = "n";
         }
+
+        playersReadyText.GetComponent<Text>().text = playersReady.ToString();
     }
 }
