@@ -28,7 +28,7 @@ public class Lobby : MonoBehaviourPun
     // Update is called once per frame
     void Update()
     {
-        if(playersReady == PhotonNetwork.PlayerList.Length)
+        if(playersReady == PhotonNetwork.PlayerList.Length && PhotonNetwork.IsMasterClient)
         {
             startButton.GetComponent<Button>().interactable = true;
         }
@@ -57,10 +57,14 @@ public class Lobby : MonoBehaviourPun
     {
         if (playersReady == PhotonNetwork.PlayerList.Length)
         {
-            if (PhotonNetwork.IsMasterClient && !isLoading)
+            if (!isLoading)
             {
                 isLoading = true;
-                PhotonNetwork.LoadLevel("Tetris");
+                if(PhotonNetwork.IsMasterClient)
+                {
+                    PhotonNetwork.LoadLevel("Tetris");
+                }
+
             }
         }
     }
