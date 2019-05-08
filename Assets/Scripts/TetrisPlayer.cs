@@ -48,6 +48,11 @@ public class TetrisPlayer : MonoBehaviourPun
 
     public void SpawnNextPiece()
     {
+        //Set our current pieces parent to null
+
+        if(currentlyControlledPiece != null)
+            currentlyControlledPiece.transform.parent = null;
+
         // Pick a random piece from the pieces list
         int randomPiece = Random.Range(0, pieces.Length);
 
@@ -64,15 +69,30 @@ public class TetrisPlayer : MonoBehaviourPun
 
     IEnumerator MovePieceDown()
     {
-        while (true)
+        bool loop = true;
+        while (loop)
         {
+            if (currentlyControlledPiece == null)
+                yield return null;
+
             yield return new WaitForSeconds(moveDownPause);
             currentlyControlledPiece.transform.position = new Vector3(currentlyControlledPiece.transform.position.x,
                 currentlyControlledPiece.transform.position.y - increment, 0f);
 
-            if (currentlyControlledPiece.transform.position.y == -8.78)
+            // TODO FIX THIS, DOESN'T STOP THE BLOCK FROM GOING PAST THE BOTTOM
+            if (currentlyControlledPiece.transform.position.y == -8.98)
             {
-                break;
+                loop = false;
+            }
+
+            // We're gonna call the function on the child objects that tell us if we've hit something below us
+            for (int i = 0; i < transform.GetChild(0).childCount; i++)
+            {
+                if(transform.GetChild(0).GetChild(i).GetComponent<BlockCollisionChecker>().ObjectBelowCube())
+                {
+                    // We want to exit the loop
+                    loop = false;
+                }
             }
         }
         SpawnNextPiece();

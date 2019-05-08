@@ -46,7 +46,7 @@ public class GameManager : MonoBehaviourPunCallbacks
     [PunRPC]
     void InstantiateTetrisPlayer()
     {
-        PhotonNetwork.Instantiate(tetrisPlayer.name, new Vector3(2.56f, 8.78f, 0f), Quaternion.identity);
+        PhotonNetwork.Instantiate(tetrisPlayer.name, new Vector3(2.56f, 8.98f, 0f), Quaternion.identity);
     }
 
     [PunRPC]
